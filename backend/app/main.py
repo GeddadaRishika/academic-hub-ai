@@ -28,6 +28,15 @@ async def lifespan(app: FastAPI):
     yield
 
 app = FastAPI(title="AcademicHub AI API", version="1.0.0", lifespan=lifespan)
+
+@app.get("/")
+def home():
+    return {
+        "message": "Welcome to AcademicHub AI",
+        "status": "running",
+        "docs": "/docs",
+        "health": "/api/health",
+    }
 app.add_middleware(CORSMiddleware, allow_origins=settings.cors_origin_list, allow_credentials=True, allow_methods=["*"], allow_headers=["*"])
 
 @app.get("/api/health")
