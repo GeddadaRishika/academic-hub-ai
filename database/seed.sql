@@ -1,0 +1,3 @@
+-- Demo records are created by backend/app/database/seed.py so password hashes
+-- are generated securely and the bundled sample PDF has a valid local path.
+-- Run: cd backend && python -m app.database.seed
